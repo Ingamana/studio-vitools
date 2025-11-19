@@ -25,8 +25,8 @@ export const button = defineType({
   },
   preview: {
     select: {
-      button_label: 'button_label',
-      button_url: 'button_url',
+      button_label: 'label',
+      button_url: 'url',
     },
     prepare: ({button_label, button_url}) => {
       if (button_label && button_url) {

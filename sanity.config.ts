@@ -4,9 +4,11 @@ import {visionTool} from '@sanity/vision'
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemaTypes'
 
-import {CogIcon, HomeIcon} from '@sanity/icons'
+import {CogIcon, DocumentTextIcon, FolderIcon, HomeIcon, RocketIcon} from '@sanity/icons'
 
 import {shopifyAssets} from 'sanity-plugin-shopify-assets'
+
+import {shopifySiteUrl} from './helpers/constants'
 
 export default defineConfig({
   name: 'default',
@@ -36,37 +38,32 @@ export default defineConfig({
               .id('home')
               .icon(HomeIcon)
               .child(S.document().schemaType('home').documentId('home')),
-            // S.documentTypeListItem('pages').title('Pages').icon(FolderIcon),
+            // S.documentTypeListItem('pages').title('Pages').icon(FolderIcon)NFolderIcon
             // S.documentTypeListItem('products').title('Products').icon(DiamondIcon),
             // Sprint 1
             // S.documentTypeListItem('platforms').title('Platforms').icon(SquareIcon),
             // S.documentTypeListItem('industries').title('Industries').icon(RocketIcon),
 
+            // S.documentTypeListItem('products').title('Products').icon(RocketIcon),
+
+            S.documentTypeListItem('product')
+              .title('Products')
+              .icon(() => '🛍️'),
+
             // S.listItem()
-            //   .title('Resources')
-            //   .icon(DocumentTextIcon)
+            //   .title('Shopify Products')
+            //   .icon(() => '🛍️') // optional emoji or import an icon
             //   .child(
-            //     S.list()
-            //       .title('Resources')
-            //       .items([
-            //         S.documentTypeListItem('resourcesPage')
-            //           .title('Resources Pages')
-            //           .icon(FolderIcon),
-            //         S.documentTypeListItem('articles').title('Insights').icon(DocumentTextIcon),
-            //         S.documentTypeListItem('case_study')
-            //           .title('Case studies')
-            //           .icon(DocumentTextIcon),
-            //         S.documentTypeListItem('newsEntries').title('News').icon(DocumentTextIcon),
-            //         S.documentTypeListItem('webinars').title('Webinars').icon(DocumentTextIcon),
-            //         S.documentTypeListItem('events').title('Events').icon(DocumentTextIcon),
-            //         S.documentTypeListItem('reports').title('Reports').icon(DocumentTextIcon),
-            //         S.documentTypeListItem('guides').title('Guides').icon(DocumentTextIcon),
-            //         S.documentTypeListItem('press').title('Press').icon(DocumentTextIcon),
-            //         S.documentTypeListItem('annotations')
-            //           .title('Annotations')
-            //           .icon(DocumentTextIcon),
-            //       ]),
+            //     S.documentList()
+            //       .title('All Products')
+            //       .menuItems([...S.documentTypeList('product').getMenuItems()]), // keeps the “New product” button if you ever want it
+            //     // .defaultOrdering([{field: 'store.title', direction: 'asc'}]), // sorts by Shopify title
             //   ),
+
+            // Optional: separate list for hidden/disabled products
+            // S.listItem()
+            //   .title('Hidden Products')
+            //   .child(S.documentList().filter('_type == "product"')),
 
             // S.divider(),
 
@@ -144,10 +141,10 @@ export default defineConfig({
           ]),
     }),
     // structureTool(),
-    // visionTool(),
+    visionTool(),
 
     shopifyAssets({
-      shopifyDomain: 'ingamana-test-2.myshopify.com',
+      shopifyDomain: shopifySiteUrl,
     }),
   ],
 

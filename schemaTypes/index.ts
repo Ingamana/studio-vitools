@@ -49,6 +49,7 @@ import {productIcon} from './components/productIcon'
 import {tag} from './components/tag'
 import {faqList} from './components/faqList'
 import {accordionList} from './components/accordionList'
+import {productsTypes} from './productsTypes'
 
 export const schemaTypes = [
   // Globals
@@ -108,4 +109,5 @@ export const schemaTypes = [
 
   // Pages
   homeTypes,
+  productsTypes,
 ]
