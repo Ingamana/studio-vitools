@@ -11,6 +11,12 @@ export const shopifyProductId = defineType({
       title: 'Shopify Product ID',
       type: 'string',
     },
+    {
+      name: 'shopifyProduct',
+      title: 'Shopify Product',
+      type: 'reference',
+      to: [{type: 'product'}],
+    },
   ],
   preview: {
     select: {

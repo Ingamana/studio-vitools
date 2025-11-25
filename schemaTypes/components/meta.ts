@@ -19,6 +19,12 @@ export const meta = defineType({
       validation: (rule) => rule.max(140),
     },
     {
+      name: 'media',
+      title: 'Media',
+      type: 'shopify.asset',
+      validation: (rule) => rule.required(),
+    },
+    {
       name: 'meta_image',
       title: 'Meta image',
       type: 'image',

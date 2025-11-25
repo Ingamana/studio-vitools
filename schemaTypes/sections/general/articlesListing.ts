@@ -30,12 +30,43 @@ export const sectionArticlesListing = defineType({
       type: 'number',
     },
     {
+      name: 'curation',
+      title: 'Curation',
+      defaultValue: 'manual',
+      initialValue: 'manual',
+      type: 'string',
+      description:
+        'Automatic: articles are pulled automatically by date | Manual: select articles manually',
+      options: {
+        list: [
+          {title: 'Automatic', value: 'automatic'},
+          {title: 'Manual', value: 'manual'},
+        ],
+        layout: 'radio',
+      },
+      validation: (rule) => rule.required(),
+    },
+    {
       name: 'articles',
       title: 'Articles',
       type: 'array',
       of: [{type: 'reference', to: [{type: 'articles'}]}],
+      hidden: ({parent}) => parent?.curation === 'automatic',
 
-      validation: (rule) => rule.required().min(2),
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const curation = (context.parent as any)?.curation
+
+          if (curation === 'manual') {
+            if (!value || value.length === 0) {
+              return 'At least one article is required in manual mode'
+            }
+            if (value.length < 2) {
+              return 'Please select at least 2 articles'
+            }
+          }
+          return true
+        }),
     },
   ],
   preview: {
