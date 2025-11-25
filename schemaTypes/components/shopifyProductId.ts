@@ -7,11 +7,6 @@ export const shopifyProductId = defineType({
   type: 'object',
   fields: [
     {
-      name: 'shopifyProductId',
-      title: 'Shopify Product ID',
-      type: 'string',
-    },
-    {
       name: 'shopifyProduct',
       title: 'Shopify Product',
       type: 'reference',
