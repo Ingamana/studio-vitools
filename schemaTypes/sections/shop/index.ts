@@ -4,6 +4,7 @@ export const shopSectionsTypes = [
   {type: 'sectionHighlightedProduct'},
   {type: 'sectionPerksCardsListing'},
   {type: 'sectionProductsListing'},
+  {type: 'sectionProductInformations'},
 ]
 
 export const shopSections = defineType({

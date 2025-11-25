@@ -47,6 +47,10 @@ export default defineConfig({
 
             // S.documentTypeListItem('products').title('Products').icon(RocketIcon),
 
+            S.documentTypeListItem('shop')
+              .title('Shop')
+              .icon(() => '🛍️')
+              .child(S.document().schemaType('shop').documentId('shop')),
             S.documentTypeListItem('product')
               .title('Products')
               .icon(() => '🛍️'),
@@ -150,7 +154,7 @@ export default defineConfig({
           ]),
     }),
     // structureTool(),
-    // visionTool(),
+    visionTool(),
     colorInput(),
 
     shopifyAssets({

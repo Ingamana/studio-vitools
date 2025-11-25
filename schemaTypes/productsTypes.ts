@@ -55,21 +55,45 @@ export const productsTypes = defineType({
         },
         {
           name: 'id',
-          type: 'string',
+          type: 'number',
           hidden: true,
           readOnly: true,
         },
         {
           name: 'isDeleted',
-          type: 'string',
+          type: 'boolean',
           hidden: true,
           readOnly: true,
         },
         {
           name: 'options',
-          type: 'string',
+          type: 'array',
           hidden: true,
           readOnly: true,
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'name',
+                  type: 'string',
+                  hidden: true,
+                  readOnly: true,
+                },
+                {
+                  name: 'values',
+                  type: 'array',
+                  hidden: true,
+                  readOnly: true,
+                  of: [
+                    {
+                      type: 'string',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
           name: 'previewImageUrl',
@@ -79,9 +103,23 @@ export const productsTypes = defineType({
         },
         {
           name: 'priceRange',
-          type: 'string',
+          type: 'object',
           hidden: true,
           readOnly: true,
+          fields: [
+            {
+              name: 'maxVariantPrice',
+              type: 'number',
+              hidden: true,
+              readOnly: true,
+            },
+            {
+              name: 'minVariantPrice',
+              type: 'number',
+              hidden: true,
+              readOnly: true,
+            },
+          ],
         },
         {
           name: 'productType',
@@ -91,9 +129,17 @@ export const productsTypes = defineType({
         },
         {
           name: 'shop',
-          type: 'string',
+          type: 'object',
           hidden: true,
           readOnly: true,
+          fields: [
+            {
+              name: 'domain',
+              type: 'string',
+              hidden: true,
+              readOnly: true,
+            },
+          ],
         },
         {
           name: 'status',
@@ -109,9 +155,17 @@ export const productsTypes = defineType({
         },
         {
           name: 'variants',
-          type: 'string',
+          weak: true,
           hidden: true,
           readOnly: true,
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{type: 'string'}],
+              weak: true,
+            },
+          ],
         },
         {
           name: 'vendor',
@@ -120,6 +174,15 @@ export const productsTypes = defineType({
           readOnly: true,
         },
       ],
+    },
+
+    {
+      name: 'productPerks',
+      title: 'Product perks',
+      description: 'Displayed along products shop perks (general).',
+      type: 'accordionList',
+      validation: (rule) => rule.required(),
+      fieldset: 'productSpecs',
     },
 
     // {
@@ -157,6 +220,11 @@ export const productsTypes = defineType({
     },
   },
   fieldsets: [
+    {
+      name: 'productSpecs',
+      title: 'Product specifications',
+      options: {collapsible: true, collapsed: true},
+    },
     {
       name: 'sections',
       title: 'Sections',

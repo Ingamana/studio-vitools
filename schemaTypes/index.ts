@@ -56,6 +56,8 @@ import {articlesTypes} from './articlesTypes'
 import {wysiwygText} from './components/wysiwygText'
 import {storiesTypes} from './storiesTypes'
 import {wysiwygTextTabbedContent} from './components/wysiwygTextTabbedContent'
+import {sectionProductInformations} from './sections/shop/productInformations'
+import {shopTypes} from './shopTypes'
 
 export const schemaTypes = [
   // Globals
@@ -115,6 +117,7 @@ export const schemaTypes = [
   sectionToolsComparison,
   sectionTransformations,
   sectionTwoCta,
+  sectionProductInformations,
 
   // Pages
   homeTypes,
@@ -122,4 +125,5 @@ export const schemaTypes = [
   productsTypes,
   articlesTypes,
   storiesTypes,
+  shopTypes,
 ]
