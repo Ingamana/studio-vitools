@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionTextMedia = defineType({
   name: 'sectionTextMedia',
@@ -43,12 +44,17 @@ export const sectionTextMedia = defineType({
   preview: {
     select: {
       title: 'title',
+      media: 'media',
     },
-    prepare({title}) {
+    prepare({title, media}) {
       return {
         title: portableTextToPlainText(title),
         subtitle: 'Section — Text Media',
+        media: media?.url ? media.url : undefined,
       }
     },
+  },
+  components: {
+    preview: ExternalImagePreview, // Add custom preview component
   },
 })

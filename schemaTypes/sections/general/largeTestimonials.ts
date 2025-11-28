@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionLargeTestimonials = defineType({
   name: 'sectionLargeTestimonials',
@@ -59,13 +60,18 @@ export const sectionLargeTestimonials = defineType({
             select: {
               title: 'quote',
               subtitle: 'quoteAuthor',
+              media: 'media',
             },
-            prepare({title, subtitle}) {
+            prepare({title, subtitle, media}) {
               return {
                 title: portableTextToPlainText(title),
                 subtitle: portableTextToPlainText(subtitle),
+                media: media?.url ? media.url : undefined,
               }
             },
+          },
+          components: {
+            preview: ExternalImagePreview, // Add custom preview component
           },
         }),
       ],

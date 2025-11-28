@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionDualFramedMedia = defineType({
   name: 'sectionDualFramedMedia',
@@ -48,13 +49,18 @@ export const sectionDualFramedMedia = defineType({
           preview: {
             select: {
               title: 'caption',
+              media: 'media',
             },
-            prepare({title}) {
+            prepare({title, media}) {
               return {
                 title: title ? portableTextToPlainText(title) : 'Dual Media Item',
                 subtitle: `Media Item`,
+                media: media?.url ? media.url : undefined,
               }
             },
+          },
+          components: {
+            preview: ExternalImagePreview, // Add custom preview component
           },
         }),
       ],
@@ -69,7 +75,11 @@ export const sectionDualFramedMedia = defineType({
       return {
         title: `${medias?.length || 0} Media Items`,
         subtitle: 'Section — Media slider',
+        media: medias && medias.length > 0 ? medias[0].media.url : undefined,
       }
     },
+  },
+  components: {
+    preview: ExternalImagePreview, // Add custom preview component
   },
 })

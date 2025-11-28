@@ -19,7 +19,22 @@ export const sectionIntro = defineType({
     {
       name: 'text',
       title: 'Text',
-      type: 'customText',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            // {title: 'Normal', value: 'normal'},
+          ],
+          marks: {
+            decorators: [
+              // {title: 'Emphasis', value: 'em'},
+              // {title: 'Superscript', value: 'sup'},
+            ],
+            annotations: [], // Disable annotations like links
+          },
+        },
+      ],
       validation: (rule) => rule.required(),
     },
     {

@@ -64,11 +64,10 @@ export const pagesTypes = defineType({
       hero: 'hero',
     },
     prepare({hero, slug}) {
-      console.log(hero)
       return {
         // title: portableTextToPlainText(title),
         title: hero?.[0]?.title ? portableTextToPlainText(hero[0].title) : slug?.current,
-        // subtitle: 'Hero — Fullscreen',
+        subtitle: `/${slug.current}`,
       }
     },
   },

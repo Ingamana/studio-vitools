@@ -1,4 +1,4 @@
-import ShopifyProductIdInput from './ShopifyProductIdInput'
+import {ExternalImagePreview} from '../../components/ExternalPreviewImage'
 import {defineType} from 'sanity'
 
 export const shopifyProductId = defineType({
@@ -15,12 +15,22 @@ export const shopifyProductId = defineType({
   ],
   preview: {
     select: {
-      product: 'shopifyProductId',
+      productTitle: 'shopifyProduct.store.title', // title
+      slug: 'shopifyProduct.store.slug.current', // store slug
+      media: 'shopifyProduct.store.previewImageUrl', // media
     },
-    prepare({product}) {
+    prepare({productTitle, slug, media}) {
       return {
-        title: `Product ID: ${product}`,
+        title: productTitle || 'No product selected',
+        subtitle: slug || 'No store',
+        media: media,
       }
     },
   },
+  components: {
+    preview: ExternalImagePreview, // Add custom preview component
+  },
+  // components: {
+  //   preview: ExternalImagePreview, // Add custom preview component
+  // },
 })

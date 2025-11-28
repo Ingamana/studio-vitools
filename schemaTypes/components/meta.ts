@@ -19,17 +19,17 @@ export const meta = defineType({
       validation: (rule) => rule.max(140),
     },
     {
-      name: 'media',
-      title: 'Media',
-      type: 'shopify.asset',
-      validation: (rule) => rule.required(),
-    },
-    {
-      name: 'meta_image',
-      title: 'Meta image',
-      type: 'image',
+      name: 'meta_images',
+      title: 'Open Graph / Social Media Images',
+      type: 'array',
+      of: [
+        {
+          type: 'shopify.asset',
+        },
+      ],
+      validation: (Rule) => Rule.min(1).max(10), // at least 1, at most 10
       options: {
-        accept: 'image/jpg, image/jpeg, image/png',
+        layout: 'grid', // nice grid view in Studio
       },
     },
   ],

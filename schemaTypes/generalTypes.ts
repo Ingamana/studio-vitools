@@ -6,16 +6,6 @@ export const generalTypes = defineType({
   type: 'document',
   documentId: 'general',
   fields: [
-    // Header
-    {
-      name: 'meta',
-      title: 'Default SEO',
-      type: 'meta',
-      fieldset: 'metas',
-      description: 'Used as default values for pages with undefined metas.',
-      validation: (rule) => rule.required(),
-    },
-
     {
       name: 'menuLeftLinks',
       title: 'Menu Left Links',
@@ -90,6 +80,15 @@ export const generalTypes = defineType({
       type: 'button',
       validation: (rule) => rule.required(),
       fieldset: 'siteLinks',
+    },
+
+    {
+      name: 'meta',
+      title: 'Default SEO',
+      type: 'meta',
+      fieldset: 'metas',
+      description: 'Used as default values for pages with undefined metas.',
+      validation: (rule) => rule.required(),
     },
   ],
 

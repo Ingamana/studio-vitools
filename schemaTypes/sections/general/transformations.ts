@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionTransformations = defineType({
   name: 'sectionTransformations',
@@ -24,6 +25,9 @@ export const sectionTransformations = defineType({
         defineType({
           name: 'transformationCardItem',
           type: 'object',
+          components: {
+            preview: ExternalImagePreview, // Add custom preview component
+          },
           fields: [
             {
               name: 'media',
@@ -59,7 +63,7 @@ export const sectionTransformations = defineType({
               return {
                 title: portableTextToPlainText(title),
                 subtitle: portableTextToPlainText(description),
-                // media: image?.url || undefined, // TODO: this doesnt work
+                media: image?.url || undefined,
               }
             },
           },

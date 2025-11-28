@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionToolsComparison = defineType({
   name: 'sectionToolsComparison',
@@ -20,6 +21,7 @@ export const sectionToolsComparison = defineType({
         defineType({
           name: 'toolComparisonItem',
           type: 'object',
+
           fields: [
             {
               name: 'product',
@@ -87,13 +89,20 @@ export const sectionToolsComparison = defineType({
           ],
           preview: {
             select: {
-              title: 'product',
+              productTitle: 'product.shopifyProduct.store.title', // product title
+              slug: 'product.shopifyProduct.store.slug.current', // store slug
+              media: 'product.shopifyProduct.store.previewImageUrl', // media
             },
-            prepare({title}) {
+            prepare({productTitle, slug, media}) {
               return {
-                title: title?.shopifyProductId || 'No product selected',
+                title: productTitle || 'No product selected',
+                subtitle: slug || 'No store',
+                media: media,
               }
             },
+          },
+          components: {
+            preview: ExternalImagePreview, // Add custom preview component
           },
         }),
       ],

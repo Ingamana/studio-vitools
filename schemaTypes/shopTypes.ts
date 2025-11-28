@@ -13,6 +13,14 @@ export const shopTypes = defineType({
       fieldset: 'hero',
     },
     {
+      name: 'sections',
+      title: 'Sections',
+      description: 'Displayed below the products listing',
+      options: {collapsible: true, collapsed: true},
+      fieldset: 'sections',
+      type: 'sections',
+    },
+    {
       name: 'meta',
       title: 'SEO',
       type: 'meta',
@@ -41,7 +49,7 @@ export const shopTypes = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Homepage',
+        title: 'Shop',
       }
     },
   },

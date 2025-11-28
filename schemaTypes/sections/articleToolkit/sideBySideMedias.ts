@@ -1,4 +1,5 @@
 import {defineType} from 'sanity'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionSideBySideMedias = defineType({
   name: 'sectionSideBySideMedias',
@@ -21,11 +22,18 @@ export const sectionSideBySideMedias = defineType({
     },
   ],
   preview: {
-    prepare() {
+    select: {
+      media: 'media',
+    },
+    prepare({media}) {
       return {
         title: 'Side By Side Medias',
         subtitle: 'Section — Side By Side Medias',
+        media: media?.url ? media.url : undefined,
       }
     },
+  },
+  components: {
+    preview: ExternalImagePreview, // Add custom preview component
   },
 })

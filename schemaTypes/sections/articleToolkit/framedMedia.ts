@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionFramedMedia = defineType({
   name: 'sectionFramedMedia',
@@ -27,7 +28,11 @@ export const sectionFramedMedia = defineType({
       return {
         title: title ? portableTextToPlainText(title) : media.url,
         subtitle: 'Section — Simple Media',
+        media: media.url ? media.url : undefined,
       }
     },
+  },
+  components: {
+    preview: ExternalImagePreview, // Add custom preview component
   },
 })

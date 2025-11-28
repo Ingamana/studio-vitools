@@ -9,8 +9,9 @@
     "module": "Preserve",
     "moduleDetection": "force",
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
+    "jsx": "react-jsx",
+    "incremental": true,
+    "jsxImportSource": "react"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

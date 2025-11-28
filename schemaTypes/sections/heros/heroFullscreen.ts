@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const heroFullscreen = defineType({
   name: 'heroFullscreen',
@@ -88,12 +89,17 @@ export const heroFullscreen = defineType({
   preview: {
     select: {
       title: 'title',
+      media: 'media',
     },
-    prepare({title}) {
+    prepare({title, media}) {
       return {
         title: portableTextToPlainText(title),
         subtitle: 'Hero — Fullscreen',
+        media: media.url ? media.url : undefined,
       }
     },
+  },
+  components: {
+    preview: ExternalImagePreview, // Add custom preview component
   },
 })

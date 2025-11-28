@@ -17,7 +17,7 @@ export const articlesTypes = defineType({
         input: PrefixedSlugInput, // Use the custom component
       },
       options: {
-        prefix: '/articles/',
+        prefix: 'articles/',
       },
       fieldset: 'general',
     },
@@ -104,7 +104,6 @@ export const articlesTypes = defineType({
       hero: 'hero',
     },
     prepare({hero, slug}) {
-      console.log(hero)
       return {
         // title: portableTextToPlainText(title),
         title: hero?.[0]?.title ? portableTextToPlainText(hero[0].title) : slug?.current,

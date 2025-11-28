@@ -1,3 +1,4 @@
+import {ExternalImagePreview} from '../../components/ExternalPreviewImage'
 import {portableTextToPlainText} from '../../helpers/functions'
 import {defineType} from 'sanity'
 
@@ -14,13 +15,18 @@ export const hero = defineType({
     select: {
       hero: 'hero',
       title: 'hero[0].title',
+      media: 'hero[0].media',
     },
-    prepare({hero, title}) {
+    prepare({hero, title, media}) {
       const plainTitle = title && typeof title === 'object' ? portableTextToPlainText(title) : title
 
       return {
-        title: 'test',
+        title: plainTitle || 'Hero',
+        media: media?.url ? media.url : undefined,
       }
     },
+  },
+  components: {
+    preview: ExternalImagePreview, // Add custom preview component
   },
 })

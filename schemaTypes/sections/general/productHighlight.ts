@@ -48,11 +48,13 @@ export const sectionProductHighlight = defineType({
           ],
           preview: {
             select: {
-              title: 'selectLabel',
+              productTitle: 'product.shopifyProduct.store.title', // product title
+              slug: 'product.shopifyProduct.store.slug.current', // store slug
             },
-            prepare({title}) {
+            prepare({productTitle, slug}) {
               return {
-                title: title,
+                title: productTitle || 'No product selected',
+                subtitle: slug || 'No store',
               }
             },
           },

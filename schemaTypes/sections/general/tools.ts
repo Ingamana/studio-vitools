@@ -1,5 +1,6 @@
 import {defineType} from 'sanity'
 import {portableTextToPlainText} from '../../../helpers/functions'
+import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
 
 export const sectionTools = defineType({
   name: 'sectionTools',
@@ -36,6 +37,23 @@ export const sectionTools = defineType({
         },
       ],
       validation: (rule) => rule.required().min(1),
+      preview: {
+        select: {
+          productTitle: 'product.shopifyProduct.store.title', // product title
+          slug: 'product.shopifyProduct.store.slug.current', // store slug
+          media: 'product.shopifyProduct.store.previewImageUrl', // media
+        },
+        prepare({productTitle, slug, media}) {
+          return {
+            title: productTitle || 'No product selected',
+            subtitle: slug || 'No store',
+            media: media?.url ? media.url : undefined,
+          }
+        },
+      },
+      components: {
+        preview: ExternalImagePreview, // Add custom preview component
+      },
     },
   ],
   preview: {

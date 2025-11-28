@@ -5,7 +5,17 @@ import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemaTypes'
 import {colorInput} from '@sanity/color-input'
 
-import {CogIcon, DocumentTextIcon, FolderIcon, HomeIcon, RocketIcon} from '@sanity/icons'
+import {
+  BlockContentIcon,
+  BookIcon,
+  CogIcon,
+  DocumentTextIcon,
+  FolderIcon,
+  HomeIcon,
+  ProjectsIcon,
+  RocketIcon,
+  TrolleyIcon,
+} from '@sanity/icons'
 
 import {shopifyAssets} from 'sanity-plugin-shopify-assets'
 
@@ -49,19 +59,13 @@ export default defineConfig({
 
             S.documentTypeListItem('shop')
               .title('Shop')
-              .icon(() => '🛍️')
+              .icon(TrolleyIcon)
               .child(S.document().schemaType('shop').documentId('shop')),
-            S.documentTypeListItem('product')
-              .title('Products')
-              .icon(() => '🛍️'),
+            S.documentTypeListItem('product').title('Products').icon(ProjectsIcon),
 
-            S.documentTypeListItem('articles')
-              .title('Articles')
-              .icon(() => '📚'),
+            S.documentTypeListItem('articles').title('Articles').icon(BlockContentIcon),
 
-            S.documentTypeListItem('stories')
-              .title('Stories')
-              .icon(() => '📖'),
+            S.documentTypeListItem('stories').title('Stories').icon(BookIcon),
 
             // S.listItem()
             //   .title('Shopify Products')
