@@ -27,7 +27,7 @@ export const generalTypes = defineType({
       title: 'Mega Menu Title',
       type: 'title',
       validation: (rule) => rule.required(),
-      fieldset: 'menu',
+      fieldset: 'megaMenu',
     },
     {
       name: 'megaMenuLinks',
@@ -65,21 +65,6 @@ export const generalTypes = defineType({
       type: 'accordionList',
       validation: (rule) => rule.required(),
       fieldset: 'shop',
-    },
-
-    {
-      name: 'privacyPolicyButton',
-      title: 'Privacy Policy',
-      type: 'button',
-      validation: (rule) => rule.required(),
-      fieldset: 'siteLinks',
-    },
-    {
-      name: 'termsAndConditionsButton',
-      title: 'Terms and Conditions',
-      type: 'button',
-      validation: (rule) => rule.required(),
-      fieldset: 'siteLinks',
     },
 
     {

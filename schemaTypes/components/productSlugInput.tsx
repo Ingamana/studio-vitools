@@ -5,7 +5,7 @@ import {SlugInput as DefaultSlugInput} from 'sanity'
 import {useClient} from 'sanity'
 import {useFormValue} from 'sanity'
 
-import {shopifySiteUrl} from '../../helpers/constants'
+import {siteUrl, shopifySiteUrl} from '../../helpers/constants'
 
 const CustomSlugInput = (props) => {
   const {schemaType, value, onChange, validation, elementProps} = props
@@ -25,7 +25,7 @@ const CustomSlugInput = (props) => {
   //     client
   //       .fetch(`*[_id == $ref][0]{slug{current}}`, {ref: targetAudienceRef._ref})
   //       .then((result) => {
-  //         setSuffix(result?.slug?.current ? `/for-${result.slug.current}` : '')
+  //         setSuffix(result?.slug?.current ? `/for-"${result.slug.current}` : '')
   //       })
   //       .catch((error) => {
   //         console.error('Error fetching target audience slug:', error)
@@ -39,6 +39,7 @@ const CustomSlugInput = (props) => {
   // Construct the full URL
   // const fullUrl = `${staging ? stage : site}${prefix}${value?.current || value || ''}${suffix}`
   const fullUrl = `https://admin.shopify.com/store/${shopifySiteUrl}/products/${id}`
+  const productUrl = `${siteUrl}${prefix}${value?.current || value || ''}${suffix}`
 
   return (
     <Stack space={3}>
@@ -51,9 +52,14 @@ const CustomSlugInput = (props) => {
         />
       </Card>
       <Text size={1} muted>
-        Full URL:{' '}
+        Shop URL:{' '}
         <a href={fullUrl} target="_blank" rel="noopener noreferrer">
           {fullUrl || '[FULL URL]'}
+        </a>
+        <br />
+        Site URL:{' '}
+        <a href={productUrl} target="_blank" rel="noopener noreferrer">
+          {productUrl || '[FULL URL]'}
         </a>
       </Text>
     </Stack>

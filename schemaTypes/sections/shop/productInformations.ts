@@ -33,7 +33,13 @@ export const sectionProductInformations = defineType({
                   fields: [
                     {
                       name: 'backgroundColor',
-                      type: 'sectionBackgroundColor',
+                      title: 'Background Color',
+                      type: 'color',
+                      defaultValue: {hex: '#FFFFFF'},
+                      options: {
+                        disableAlpha: true,
+                      },
+                      validation: (rule) => rule.required(),
                     },
                     {
                       name: 'title',
@@ -77,6 +83,16 @@ export const sectionProductInformations = defineType({
           name: 'imageContentItem',
           type: 'object',
           fields: [
+            {
+              name: 'backgroundColor',
+              title: 'Background Color',
+              type: 'color',
+              defaultValue: {hex: '#FFFFFF'},
+              options: {
+                disableAlpha: true,
+              },
+              validation: (rule) => rule.required(),
+            },
             {
               name: 'tabTitle',
               title: 'Tab Title',

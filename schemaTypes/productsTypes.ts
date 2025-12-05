@@ -31,7 +31,7 @@ export const productsTypes = defineType({
           },
           options: {
             staging: true,
-            prefix: 'blog/',
+            prefix: 'product/',
           },
         },
         // Unused fields but kept for potential future use
