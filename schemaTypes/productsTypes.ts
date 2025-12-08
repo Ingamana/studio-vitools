@@ -193,7 +193,7 @@ export const productsTypes = defineType({
     {
       name: 'sections',
       title: 'Sections',
-      type: 'shopSections',
+      type: 'sections',
       fieldset: 'sections',
     },
     {

@@ -1,24 +1,6 @@
 import {defineType} from 'sanity'
 
-export const generalSectionsTypes = [
-  {type: 'sectionArticlesListing'},
-  {type: 'sectionCta'},
-  {type: 'sectionHowItWorks'},
-  {type: 'sectionIntro'},
-  {type: 'sectionLargeTestimonials'},
-  {type: 'sectionList'},
-  {type: 'sectionMedia'},
-  {type: 'sectionNewsletter'},
-  {type: 'sectionProductHighlight'},
-  {type: 'sectionQuotesSlider'},
-  {type: 'sectionResourcesCardsListing'},
-  {type: 'sectionTabbedContent'},
-  {type: 'sectionTextMedia'},
-  {type: 'sectionTools'},
-  {type: 'sectionToolsComparison'},
-  {type: 'sectionTransformations'},
-  {type: 'sectionTwoCta'},
-]
+export const generalSectionsTypes = [{type: 'sectionTextMedia'}]
 
 export const generalSections = defineType({
   name: 'generalSections',

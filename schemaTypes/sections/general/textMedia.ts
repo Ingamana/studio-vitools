@@ -1,16 +1,12 @@
 import {defineType} from 'sanity'
-import {portableTextToPlainText} from '../../../helpers/functions'
 import {ExternalImagePreview} from '../../../components/ExternalPreviewImage'
+import {portableTextToPlainText} from '../../../helpers/functions'
 
 export const sectionTextMedia = defineType({
   name: 'sectionTextMedia',
   title: 'Section — Text Media',
   type: 'object',
   fields: [
-    {
-      name: 'backgroundColor',
-      type: 'sectionBackgroundColor',
-    },
     {
       name: 'isReverted',
       title: 'Is reverted',

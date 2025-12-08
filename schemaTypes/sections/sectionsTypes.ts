@@ -1,9 +1,7 @@
 import {defineType} from 'sanity'
-import {articleToolkitSectionsTypes} from './articleToolkit'
-import {shopSectionsTypes} from './shop'
 import {generalSectionsTypes} from './general'
 
-const allTypes = [...articleToolkitSectionsTypes, ...shopSectionsTypes, ...generalSectionsTypes]
+const allTypes = [...generalSectionsTypes]
 
 const seen = new Set<string>()
 export const sectionsTypes = allTypes.filter((item) => {
