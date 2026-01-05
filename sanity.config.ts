@@ -172,6 +172,15 @@ export default defineConfig({
   },
 
   document: {
+    newDocumentOptions: (prev, {creationContext}) => {
+      // products are autopopulated by shopify
+      if (creationContext.schemaType === 'product') {
+        return []
+      }
+
+      return prev
+    },
+
     actions: (prev) => {
       // find the index of "publish"
       const publishIndex = prev.findIndex((action) => action.action === 'publish')
