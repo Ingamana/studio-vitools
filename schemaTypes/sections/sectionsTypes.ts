@@ -25,7 +25,7 @@ export const sections = defineType({
       views: [
         {
           name: 'grid',
-          previewImageUrl: (schemaTypeName) => `/static/previews/${schemaTypeName}.jpg`,
+          previewImageUrl: (schemaTypeName) => `/static/previews/${schemaTypeName}.png`,
         },
         {name: 'list'},
       ],

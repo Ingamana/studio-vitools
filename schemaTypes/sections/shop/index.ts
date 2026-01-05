@@ -1,7 +1,6 @@
 import {defineType} from 'sanity'
 
 export const shopSectionsTypes = [
-  {type: 'sectionHighlightedProduct'},
   {type: 'sectionPerksCardsListing'},
   {type: 'sectionProductsListing'},
   {type: 'sectionProductInformations'},
@@ -18,7 +17,7 @@ export const shopSections = defineType({
       views: [
         {
           name: 'grid',
-          previewImageUrl: (schemaTypeName) => `/static/previews/${schemaTypeName}.jpg`,
+          previewImageUrl: (schemaTypeName) => `/static/previews/${schemaTypeName}.png`,
         },
         {name: 'list'},
       ],

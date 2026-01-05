@@ -181,7 +181,6 @@ export const productsTypes = defineType({
       title: 'Product perks',
       description: 'Displayed along products shop perks (general).',
       type: 'accordionList',
-      validation: (rule) => rule.required(),
       fieldset: 'productSpecs',
     },
 

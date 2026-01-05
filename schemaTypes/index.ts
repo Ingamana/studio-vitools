@@ -21,16 +21,14 @@ import {sectionQuote} from './sections/articleToolkit/quote'
 import {sectionSideBySideMedias} from './sections/articleToolkit/sideBySideMedias'
 import {sectionSimpleMedia} from './sections/articleToolkit/simpleMedia'
 import {sectionText} from './sections/articleToolkit/text'
-import {sectionHighlightedProduct} from './sections/shop/highlightedProduct'
 import {sectionPerksCardsListing} from './sections/shop/perksCardsListing'
 import {sectionProductsListing} from './sections/shop/productsListing'
 import {sectionArticlesListing} from './sections/general/articlesListing'
+import {sectionStoriesListing} from './sections/general/storiesListing'
 import {sectionCta} from './sections/general/cta'
 import {sectionHowItWorks} from './sections/general/howItWorks'
 import {sectionIntro} from './sections/general/intro'
 import {sectionLargeTestimonials} from './sections/general/largeTestimonials'
-import {sectionList} from './sections/general/list'
-import {sectionMedia} from './sections/general/media'
 import {sectionNewsletter} from './sections/general/newsletter'
 import {sectionProductHighlight} from './sections/general/productHighlight'
 import {sectionQuotesSlider} from './sections/general/quotesSlider'
@@ -97,16 +95,14 @@ export const schemaTypes = [
   sectionSideBySideMedias,
   sectionSimpleMedia,
   sectionText,
-  sectionHighlightedProduct,
   sectionPerksCardsListing,
   sectionProductsListing,
   sectionArticlesListing,
+  sectionStoriesListing,
   sectionCta,
   sectionHowItWorks,
   sectionIntro,
   sectionLargeTestimonials,
-  sectionList,
-  sectionMedia,
   sectionNewsletter,
   sectionProductHighlight,
   sectionQuotesSlider,

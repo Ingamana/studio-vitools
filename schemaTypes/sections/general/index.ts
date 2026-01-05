@@ -2,12 +2,11 @@ import {defineType} from 'sanity'
 
 export const generalSectionsTypes = [
   {type: 'sectionArticlesListing'},
+  {type: 'sectionStoriesListing'},
   {type: 'sectionCta'},
   {type: 'sectionHowItWorks'},
   {type: 'sectionIntro'},
   {type: 'sectionLargeTestimonials'},
-  {type: 'sectionList'},
-  {type: 'sectionMedia'},
   {type: 'sectionNewsletter'},
   {type: 'sectionProductHighlight'},
   {type: 'sectionQuotesSlider'},
@@ -31,7 +30,7 @@ export const generalSections = defineType({
       views: [
         {
           name: 'grid',
-          previewImageUrl: (schemaTypeName) => `/static/previews/${schemaTypeName}.jpg`,
+          previewImageUrl: (schemaTypeName) => `/static/previews/${schemaTypeName}.png`,
         },
         {name: 'list'},
       ],

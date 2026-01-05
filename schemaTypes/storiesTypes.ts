@@ -17,29 +17,56 @@ export const storiesTypes = defineType({
         input: PrefixedSlugInput, // Use the custom component
       },
       options: {
-        prefix: '',
+        prefix: 'articles/',
       },
+      fieldset: 'general',
+    },
+    {
+      name: 'tag',
+      title: 'Tag',
+      type: 'tag',
+      fieldset: 'general',
     },
     {
       name: 'backgroundColor',
-      title: 'Page Background Color',
+      title: 'Background Color',
       type: 'color',
       defaultValue: {hex: '#FFFFFF'},
       options: {
         disableAlpha: true,
       },
       validation: (rule) => rule.required(),
+      fieldset: 'general',
     },
+    {
+      name: 'featuredMedia',
+      title: 'Featured Media',
+      type: 'shopify.asset',
+      description: 'Expected aspect-ratio: 1:1',
+      validation: (rule) => rule.required(),
+      fieldset: 'general',
+    },
+    {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'customText',
+      validation: (rule) => rule.required(),
+      fieldset: 'general',
+    },
+
     {
       name: 'hero',
       title: 'Hero',
       type: 'hero',
       fieldset: 'hero',
     },
+
     {
       name: 'sections',
       title: 'Sections',
-      type: 'articleToolkitSections',
+      // type: 'array',
+      // of: [{type: 'sectionTextMedia'}],
+      type: 'sections',
       fieldset: 'sections',
     },
     {
@@ -50,6 +77,11 @@ export const storiesTypes = defineType({
     },
   ],
   fieldsets: [
+    {
+      name: 'general',
+      title: 'General',
+      options: {collapsible: true, collapsed: true},
+    },
     {
       name: 'hero',
       title: 'Hero',

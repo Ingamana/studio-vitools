@@ -20,6 +20,7 @@ import {
 import {shopifyAssets} from 'sanity-plugin-shopify-assets'
 
 import {shopifySiteUrl} from './helpers/constants'
+import {PreviewAction} from './components/PreviewAction'
 
 export default defineConfig({
   name: 'default',
@@ -162,11 +163,26 @@ export default defineConfig({
     colorInput(),
 
     shopifyAssets({
-      shopifyDomain: 'ingamana-test-2.myshopify.com',
+      shopifyDomain: 'vitools-store.myshopify.com',
     }),
   ],
 
   schema: {
     types: schemaTypes,
+  },
+
+  document: {
+    actions: (prev) => {
+      // find the index of "publish"
+      const publishIndex = prev.findIndex((action) => action.action === 'publish')
+
+      if (publishIndex === -1) {
+        // fallback if publish is missing
+        return [PreviewAction, ...prev]
+      }
+
+      // put Preview right after Publish
+      return [...prev.slice(0, publishIndex + 1), PreviewAction, ...prev.slice(publishIndex + 1)]
+    },
   },
 })
