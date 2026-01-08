@@ -4,7 +4,7 @@ import PrefixedSlugInput from './components/prefixedSlugInput'
 
 export const storiesTypes = defineType({
   name: 'stories',
-  title: 'Page',
+  title: 'Story',
   type: 'document',
   documentId: 'stories',
   fields: [

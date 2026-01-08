@@ -40,7 +40,7 @@ export const sectionCta = defineType({
     prepare({title}) {
       return {
         title: portableTextToPlainText(title),
-        subtitle: 'Section — Two CTA',
+        subtitle: 'Section — CTA',
       }
     },
   },

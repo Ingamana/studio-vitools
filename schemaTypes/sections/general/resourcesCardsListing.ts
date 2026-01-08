@@ -66,6 +66,8 @@ export const sectionResourcesCardsListing = defineType({
               name: 'button',
               title: 'Button',
               type: 'button',
+              description:
+                'If Modal Video is defined, button will open the modal instead of navigating to a URL.',
             },
             // Modal Video specific fields
             {

@@ -4,7 +4,7 @@ import PrefixedSlugInput from './components/prefixedSlugInput'
 
 export const articlesTypes = defineType({
   name: 'articles',
-  title: 'Page',
+  title: 'Article',
   type: 'document',
   documentId: 'articles',
   fields: [

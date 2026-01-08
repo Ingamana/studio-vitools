@@ -51,6 +51,19 @@ export const generalTypes = defineType({
               validation: (rule) => rule.required(),
             },
           ],
+          preview: {
+            select: {
+              mainLinkLabel: 'mainLink.label',
+              subLinks: 'subLinks',
+            },
+            prepare({mainLinkLabel, subLinks}) {
+              return {
+                // title: portableTextToPlainText(title),
+                title: mainLinkLabel,
+                subtitle: `${subLinks.length} sub links`,
+              }
+            },
+          },
         }),
       ],
       validation: (rule) => rule.required(),

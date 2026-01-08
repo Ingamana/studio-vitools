@@ -3,7 +3,7 @@ import PrefixedSlugInput from './components/productSlugInput'
 
 export const productsTypes = defineType({
   name: 'product',
-  title: 'Product Page',
+  title: 'Product',
   type: 'document',
   documentId: 'product',
   fields: [
