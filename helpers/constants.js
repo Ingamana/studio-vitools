@@ -1,4 +1,4 @@
-export const siteUrl = 'http://localhost:3000/'
+export const siteUrl = 'https://vitools-git-develop-ingamana.vercel.app/'
 export const shopifySiteUrl = 'vitools-store' //.myshopify.com
 const SANITY_VIEWER_TOKEN =
   'skzspb7i3iXrssWtwb30IAgBMXLulWTBx8DqLmAcfzotl7OZOPH3Xe1JarmBWrUzR2JPbz1Bd9tQzZpTpUhPx24HKjD1QUbxK5qSTuJeEtmBnJphnPmSWSFt7a1DAmdzQko1q4IfmtFDzgnvXEhb8ITFXIiuP44IosN9QjNHOER09JtV3Uos'
