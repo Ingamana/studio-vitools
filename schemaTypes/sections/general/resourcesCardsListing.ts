@@ -61,6 +61,7 @@ export const sectionResourcesCardsListing = defineType({
               name: 'tag',
               title: 'Tag',
               type: 'tag',
+              description: 'Displayed in the listing card',
             },
             {
               name: 'button',
@@ -74,28 +75,32 @@ export const sectionResourcesCardsListing = defineType({
               name: 'modalTitle',
               title: 'Modal Title',
               type: 'customText',
+              description: 'Displayed in the video modal informations',
             },
             {
               name: 'modalDescription',
               title: 'Modal Description',
               type: 'customText',
+              description: 'Displayed in the video modal informations',
             },
             {
               name: 'icon',
               title: 'Icon',
               type: 'productIcon',
+              description: 'Displayed in the video modal informations',
             },
             {
               name: 'duration',
               title: 'Duration',
               type: 'string',
+              description: 'Displayed in the video modal informations and in the section card',
             },
             {
               name: 'modalVideo',
               title: 'Modal video',
               type: 'shopify.asset',
               description:
-                'Expected aspect-ratio: 16:9. If defined, overrides button URL to open a modal instead.',
+                'Expected aspect-ratio: 16:9. If defined, overrides button URL to open the video modal instead.',
             },
           ],
           preview: {

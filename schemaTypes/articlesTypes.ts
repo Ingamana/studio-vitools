@@ -19,13 +19,13 @@ export const articlesTypes = defineType({
       options: {
         prefix: 'articles/',
       },
-      fieldset: 'general',
     },
     {
       name: 'tag',
       title: 'Tag',
       type: 'tag',
       fieldset: 'general',
+      description: 'Displayed when referenced in article lists',
     },
     {
       name: 'backgroundColor',
@@ -37,12 +37,13 @@ export const articlesTypes = defineType({
       },
       validation: (rule) => rule.required(),
       fieldset: 'general',
+      description: 'Defines the page background color, also used when referenced in article lists',
     },
     {
       name: 'featuredMedia',
       title: 'Featured Media',
       type: 'shopify.asset',
-      description: 'Expected aspect-ratio: 1:1',
+      description: 'Displayed when referenced in article lists, Expected aspect-ratio: 1:1',
       validation: (rule) => rule.required(),
       fieldset: 'general',
     },
@@ -52,6 +53,7 @@ export const articlesTypes = defineType({
       type: 'customText',
       validation: (rule) => rule.required(),
       fieldset: 'general',
+      description: 'Displayed as content preview when referenced in article lists',
     },
 
     {
