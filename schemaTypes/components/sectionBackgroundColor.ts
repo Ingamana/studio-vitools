@@ -19,6 +19,7 @@ export const sectionBackgroundColor = defineType({
           {title: 'Green', value: 'green'},
           {title: 'Black', value: 'black'},
           {title: 'Grey', value: 'grey'},
+          {title: 'Pale Blue', value: 'pale-blue'},
         ],
         layout: 'select',
       },
