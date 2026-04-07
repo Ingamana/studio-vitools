@@ -35,7 +35,6 @@ export const sectionIntro = defineType({
           },
         },
       ],
-      validation: (rule) => rule.required(),
     },
     {
       name: 'fontFamily',

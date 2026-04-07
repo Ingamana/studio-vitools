@@ -25,6 +25,7 @@ import {sectionPerksCardsListing} from './sections/shop/perksCardsListing'
 import {sectionProductsListing} from './sections/shop/productsListing'
 import {sectionArticlesListing} from './sections/general/articlesListing'
 import {sectionStoriesListing} from './sections/general/storiesListing'
+import {sectionStoriesSlider} from './sections/general/storiesSlider'
 import {sectionCta} from './sections/general/cta'
 import {sectionHowItWorks} from './sections/general/howItWorks'
 import {sectionIntro} from './sections/general/intro'
@@ -99,6 +100,7 @@ export const schemaTypes = [
   sectionProductsListing,
   sectionArticlesListing,
   sectionStoriesListing,
+  sectionStoriesSlider,
   sectionCta,
   sectionHowItWorks,
   sectionIntro,

@@ -14,6 +14,23 @@ export const sectionToolsComparison = defineType({
       validation: (rule) => rule.required(),
     },
     {
+      name: 'introTitle',
+      title: 'Intro Title',
+      type: 'title',
+      validation: (rule) => rule.required(),
+    },
+    {
+      name: 'introText',
+      title: 'Intro Text',
+      type: 'customText',
+      validation: (rule) => rule.required(),
+    },
+    {
+      name: 'introButton',
+      title: 'Intro Button',
+      type: 'button',
+    },
+    {
       name: 'products',
       title: 'Products',
       type: 'array',

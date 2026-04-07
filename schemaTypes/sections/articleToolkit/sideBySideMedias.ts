@@ -7,6 +7,13 @@ export const sectionSideBySideMedias = defineType({
   type: 'object',
   fields: [
     {
+      name: 'bordered',
+      title: 'Bordered',
+      type: 'boolean',
+      initialValue: false,
+      description: 'Add a border around the medias',
+    },
+    {
       name: 'media',
       title: 'Media (left)',
       type: 'shopify.asset',

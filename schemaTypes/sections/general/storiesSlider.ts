@@ -1,8 +1,8 @@
 import {defineType} from 'sanity'
 
-export const sectionStoriesListing = defineType({
-  name: 'sectionStoriesListing',
-  title: 'Section — Stories Listing',
+export const sectionStoriesSlider = defineType({
+  name: 'sectionStoriesSlider',
+  title: 'Section — Stories Slider',
   type: 'object',
   fields: [
     {
@@ -10,13 +10,33 @@ export const sectionStoriesListing = defineType({
       type: 'sectionBackgroundColor',
     },
     {
-      name: 'loadMoreAmount',
-      title: 'Load More after how many stories?',
-      description: 'Set to 0 to disable load more button',
-      defaultValue: 4,
-      initialValue: 4,
-      type: 'number',
+      name: 'title',
+      title: 'Title',
+      type: 'title',
+      validation: (rule) => rule.required(),
     },
+    {
+      name: 'text',
+      title: 'Text',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            // {title: 'Normal', value: 'normal'},
+          ],
+          marks: {
+            decorators: [
+              // {title: 'Emphasis', value: 'em'},
+              // {title: 'Superscript', value: 'sup'},
+            ],
+            annotations: [], // Disable annotations like links
+          },
+        },
+      ],
+      validation: (rule) => rule.required(),
+    },
+
     {
       name: 'curation',
       title: 'Curation',

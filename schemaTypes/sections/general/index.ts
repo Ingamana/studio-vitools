@@ -3,6 +3,7 @@ import {defineType} from 'sanity'
 export const generalSectionsTypes = [
   {type: 'sectionArticlesListing'},
   {type: 'sectionStoriesListing'},
+  {type: 'sectionStoriesSlider'},
   {type: 'sectionCta'},
   {type: 'sectionHowItWorks'},
   {type: 'sectionIntro'},

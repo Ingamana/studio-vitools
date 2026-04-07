@@ -17,27 +17,8 @@ export const storiesTypes = defineType({
         input: PrefixedSlugInput, // Use the custom component
       },
       options: {
-        prefix: 'articles/',
+        prefix: 'stories/',
       },
-    },
-    {
-      name: 'tag',
-      title: 'Tag',
-      type: 'tag',
-      fieldset: 'general',
-      description: 'Displayed when referenced in article lists',
-    },
-    {
-      name: 'backgroundColor',
-      title: 'Background Color',
-      type: 'color',
-      defaultValue: {hex: '#FFFFFF'},
-      options: {
-        disableAlpha: true,
-      },
-      validation: (rule) => rule.required(),
-      fieldset: 'general',
-      description: 'Defines the page background color, also used when referenced in article lists',
     },
     {
       name: 'featuredMedia',
@@ -49,11 +30,11 @@ export const storiesTypes = defineType({
     },
     {
       name: 'excerpt',
-      title: 'Excerpt',
+      title: 'Highlighted Quote',
       type: 'customText',
       validation: (rule) => rule.required(),
       fieldset: 'general',
-      description: 'Displayed as content preview when referenced in article lists',
+      description: 'Quote text without ""; Displayed as content preview when referenced in article lists',
     },
 
     {

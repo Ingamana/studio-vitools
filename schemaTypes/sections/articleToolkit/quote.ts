@@ -44,7 +44,6 @@ export const sectionQuote = defineType({
       name: 'quoteAuthor',
       title: 'Quote Author',
       type: 'customText',
-      validation: (rule) => rule.required(),
     },
   ],
   preview: {
