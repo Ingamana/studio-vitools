@@ -11,11 +11,11 @@ export const sectionArticlesListing = defineType({
       defaultValue: 'default',
       initialValue: 'default',
       type: 'string',
-      description: '"Variant 2" has typewriter font + framed medias',
+      description: '"Rotated & framed" has typewriter font + rotated media + framed media',
       options: {
         list: [
           {title: 'Default', value: 'default'},
-          {title: 'Variant 2', value: 'variant-2'},
+          {title: 'Rotated & framed', value: 'variant-2'},
         ],
         layout: 'radio',
       },
