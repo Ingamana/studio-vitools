@@ -18,6 +18,7 @@ export const generalSectionsTypes = [
   {type: 'sectionTwoCta'},
 
   {type: 'sectionTransformationsStoriesListing'},
+  {type: 'sectionCommunityStoriesListing'},
   {type: 'sectionCommunityStoriesSlider'},
   {type: 'sectionJournalListing'},
 ]

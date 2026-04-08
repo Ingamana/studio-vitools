@@ -1,8 +1,8 @@
 import {defineType} from 'sanity'
 
-export const sectionCommunityStoriesSlider = defineType({
-  name: 'sectionCommunityStoriesSlider',
-  title: 'Section — Community Stories Slider',
+export const sectionCommunityStoriesListing = defineType({
+  name: 'sectionCommunityStoriesListing',
+  title: 'Section — Community Stories Listing',
   type: 'object',
   fields: [
     {
@@ -10,33 +10,13 @@ export const sectionCommunityStoriesSlider = defineType({
       type: 'sectionBackgroundColor',
     },
     {
-      name: 'title',
-      title: 'Title',
-      type: 'title',
-      validation: (rule) => rule.required(),
+      name: 'loadMoreAmount',
+      title: 'Load More after how many stories?',
+      description: 'Set to 0 to disable load more button',
+      defaultValue: 4,
+      initialValue: 4,
+      type: 'number',
     },
-    {
-      name: 'text',
-      title: 'Text',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [
-            // {title: 'Normal', value: 'normal'},
-          ],
-          marks: {
-            decorators: [
-              // {title: 'Emphasis', value: 'em'},
-              // {title: 'Superscript', value: 'sup'},
-            ],
-            annotations: [], // Disable annotations like links
-          },
-        },
-      ],
-      validation: (rule) => rule.required(),
-    },
-
     {
       name: 'curation',
       title: 'Curation',
@@ -86,7 +66,7 @@ export const sectionCommunityStoriesSlider = defineType({
       const title = `${stories?.length || 0} story(ies) with ${variant} variant`
       return {
         title: title,
-        subtitle: 'Section — Community Stories Slider',
+        subtitle: 'Section — Community Stories Listing',
       }
     },
   },

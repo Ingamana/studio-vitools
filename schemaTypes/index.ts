@@ -57,10 +57,12 @@ import {sectionProductInformations} from './sections/shop/productInformations'
 import {shopTypes} from './shopTypes'
 
 import {sectionCommunityStoriesSlider} from './sections/general/communityStoriesSlider'
+import {sectionCommunityStoriesListing} from './sections/general/communityStoriesListing'
+import {sectionTransformationsStoriesListing} from './sections/general/transformationsStoriesListing'
+import {sectionJournalListing} from './sections/general/journalListing'
 
 import {communityStoriesTypes} from './communityStoriesTypes'
 import {transformationStoriesTypes} from './transformationStoriesTypes'
-import {sectionTransformationsStoriesListing} from './sections/general/transformationsStoriesListing'
 
 export const schemaTypes = [
   // Globals
@@ -121,6 +123,8 @@ export const schemaTypes = [
 
   sectionTransformationsStoriesListing,
   sectionCommunityStoriesSlider,
+  sectionCommunityStoriesListing,
+  sectionJournalListing,
 
   // Pages
   homeTypes,
