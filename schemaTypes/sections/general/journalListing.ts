@@ -1,8 +1,8 @@
 import {defineType} from 'sanity'
 
-export const sectionStoriesListing = defineType({
-  name: 'sectionStoriesListing',
-  title: 'Section — Stories Listing',
+export const sectionJournalListing = defineType({
+  name: 'sectionJournalListing',
+  title: 'Section — Journal Listing',
   type: 'object',
   fields: [
     {
@@ -11,7 +11,7 @@ export const sectionStoriesListing = defineType({
     },
     {
       name: 'loadMoreAmount',
-      title: 'Load More after how many stories?',
+      title: 'Load More after how many articles?',
       description: 'Set to 0 to disable load more button',
       defaultValue: 4,
       initialValue: 4,
@@ -24,7 +24,7 @@ export const sectionStoriesListing = defineType({
       initialValue: 'manual',
       type: 'string',
       description:
-        'Automatic: stories are pulled automatically by date | Manual: select stories manually',
+        'Automatic: articles are pulled automatically by date | Manual: select articles manually',
       options: {
         list: [
           {title: 'Automatic', value: 'automatic'},
@@ -35,10 +35,10 @@ export const sectionStoriesListing = defineType({
       validation: (rule) => rule.required(),
     },
     {
-      name: 'stories',
-      title: 'Stories',
+      name: 'articles',
+      title: 'Articles',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'stories'}]}],
+      of: [{type: 'reference', to: [{type: 'articles'}]}],
       hidden: ({parent}) => parent?.curation === 'automatic',
 
       validation: (Rule) =>
@@ -47,10 +47,10 @@ export const sectionStoriesListing = defineType({
 
           if (curation === 'manual') {
             if (!value || value.length === 0) {
-              return 'At least one story is required in manual mode'
+              return 'At least one article is required in manual mode'
             }
             if (value.length < 2) {
-              return 'Please select at least 2 stories'
+              return 'Please select at least 2 articles'
             }
           }
           return true
@@ -59,14 +59,14 @@ export const sectionStoriesListing = defineType({
   ],
   preview: {
     select: {
-      stories: 'stories',
+      articles: 'articles',
       variant: 'variant',
     },
-    prepare({stories, variant}) {
-      const title = `${stories?.length || 0} story(ies) with ${variant} variant`
+    prepare({articles, variant}) {
+      const title = `${articles?.length || 0} article(s) with ${variant} variant`
       return {
         title: title,
-        subtitle: 'Section — Stories Listing',
+        subtitle: 'Section — Journal Listing',
       }
     },
   },

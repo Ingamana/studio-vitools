@@ -12,7 +12,8 @@ export function getPreviewUrl(type, slug) {
     product: 'product',
     shop: 'shop',
     home: '',
-    stories: 'stories',
+    communityStories: 'community-stories',
+    transformationStories: 'transformation-stories',
   }
 
   const specialSlugUrlMap = {

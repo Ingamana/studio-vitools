@@ -1,8 +1,8 @@
 import {defineType} from 'sanity'
 
-export const sectionStoriesSlider = defineType({
-  name: 'sectionStoriesSlider',
-  title: 'Section — Stories Slider',
+export const sectionCommunityStoriesSlider = defineType({
+  name: 'sectionCommunityStoriesSlider',
+  title: 'Section — Community Stories Slider',
   type: 'object',
   fields: [
     {
@@ -86,7 +86,7 @@ export const sectionStoriesSlider = defineType({
       const title = `${stories?.length || 0} story(ies) with ${variant} variant`
       return {
         title: title,
-        subtitle: 'Section — Stories Listing',
+        subtitle: 'Section — Community Stories Slider',
       }
     },
   },

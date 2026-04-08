@@ -2,22 +2,22 @@ import {defineType} from 'sanity'
 import {portableTextToPlainText} from '../helpers/functions'
 import PrefixedSlugInput from './components/prefixedSlugInput'
 
-export const storiesTypes = defineType({
-  name: 'stories',
-  title: 'Story',
+export const communityStoriesTypes = defineType({
+  name: 'communityStories',
+  title: 'Community Story',
   type: 'document',
-  documentId: 'stories',
+  documentId: 'communityStories',
   fields: [
     {
       name: 'slug',
       type: 'slug',
-      description: 'Will be used as page url, example : story-1',
+      description: 'Will be used as page url, example : community-story-1',
       validation: (rule) => rule.required(),
       components: {
         input: PrefixedSlugInput, // Use the custom component
       },
       options: {
-        prefix: 'stories/',
+        prefix: 'community-stories/',
       },
     },
     {

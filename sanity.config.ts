@@ -64,9 +64,12 @@ export default defineConfig({
               .child(S.document().schemaType('shop').documentId('shop')),
             S.documentTypeListItem('product').title('Products').icon(ProjectsIcon),
 
-            S.documentTypeListItem('articles').title('Articles').icon(BlockContentIcon),
+            S.divider(),
 
-            S.documentTypeListItem('stories').title('Stories').icon(BookIcon),
+            S.documentTypeListItem('articles').title('Journal').icon(BlockContentIcon),
+
+            S.documentTypeListItem('communityStories').title('Community Stories').icon(BookIcon),
+            S.documentTypeListItem('transformationStories').title('Transformation Stories').icon(BookIcon),
 
             // S.listItem()
             //   .title('Shopify Products')

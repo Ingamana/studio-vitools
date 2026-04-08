@@ -24,8 +24,7 @@ import {sectionText} from './sections/articleToolkit/text'
 import {sectionPerksCardsListing} from './sections/shop/perksCardsListing'
 import {sectionProductsListing} from './sections/shop/productsListing'
 import {sectionArticlesListing} from './sections/general/articlesListing'
-import {sectionStoriesListing} from './sections/general/storiesListing'
-import {sectionStoriesSlider} from './sections/general/storiesSlider'
+
 import {sectionCta} from './sections/general/cta'
 import {sectionHowItWorks} from './sections/general/howItWorks'
 import {sectionIntro} from './sections/general/intro'
@@ -53,10 +52,15 @@ import {pagesTypes} from './pagesTypes'
 import {generalSections} from './sections/general'
 import {articlesTypes} from './articlesTypes'
 import {wysiwygText} from './components/wysiwygText'
-import {storiesTypes} from './storiesTypes'
 import {wysiwygTextTabbedContent} from './components/wysiwygTextTabbedContent'
 import {sectionProductInformations} from './sections/shop/productInformations'
 import {shopTypes} from './shopTypes'
+
+import {sectionCommunityStoriesSlider} from './sections/general/communityStoriesSlider'
+
+import {communityStoriesTypes} from './communityStoriesTypes'
+import {transformationStoriesTypes} from './transformationStoriesTypes'
+import {sectionTransformationsStoriesListing} from './sections/general/transformationsStoriesListing'
 
 export const schemaTypes = [
   // Globals
@@ -99,8 +103,6 @@ export const schemaTypes = [
   sectionPerksCardsListing,
   sectionProductsListing,
   sectionArticlesListing,
-  sectionStoriesListing,
-  sectionStoriesSlider,
   sectionCta,
   sectionHowItWorks,
   sectionIntro,
@@ -117,11 +119,15 @@ export const schemaTypes = [
   sectionTwoCta,
   sectionProductInformations,
 
+  sectionTransformationsStoriesListing,
+  sectionCommunityStoriesSlider,
+
   // Pages
   homeTypes,
   pagesTypes,
   productsTypes,
   articlesTypes,
-  storiesTypes,
   shopTypes,
+  communityStoriesTypes,
+  transformationStoriesTypes,
 ]
