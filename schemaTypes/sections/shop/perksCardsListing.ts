@@ -7,6 +7,14 @@ export const sectionPerksCardsListing = defineType({
   type: 'object',
   fields: [
     {
+      name: 'narrow',
+      title: 'Display cards in a narrow layout',
+      type: 'boolean',
+      initialValue: false,
+      description:
+        'Display the cards in a narrow layout, keep unticked if you want the section to be shown in a standard layout (larger).',
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'title',

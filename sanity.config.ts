@@ -66,10 +66,81 @@ export default defineConfig({
 
             S.divider(),
 
-            S.documentTypeListItem('articles').title('Journal').icon(BlockContentIcon),
+            // S.documentTypeListItem('articles').title('Journal').icon(BlockContentIcon),
 
-            S.documentTypeListItem('communityStories').title('Community Stories').icon(BookIcon),
-            S.documentTypeListItem('transformationStories').title('Transformation Stories').icon(BookIcon),
+            // S.documentTypeListItem('communityStories').title('Community Stories').icon(BookIcon),
+            // S.documentTypeListItem('transformationStories')
+            //   .title('Transformation Stories')
+            //   .icon(BookIcon),
+
+            S.listItem()
+              .icon(BookIcon)
+              .title('Journal articles')
+              .child(
+                S.list()
+                  .title('Journal Articles')
+                  .items([
+                    S.listItem()
+                      .icon(BookIcon)
+                      .title('Landing Page')
+                      .child(
+                        S.document().schemaType('journalLanding').documentId('journalLanding'),
+                      ),
+                    S.divider(),
+                    S.listItem()
+                      .icon(BookIcon)
+                      .title('Journal articles')
+                      .child(S.documentTypeList('articles').title('Journal article')),
+                  ]),
+              ),
+
+            S.listItem()
+              .icon(BookIcon)
+              .title('Transformation stories')
+              .child(
+                S.list()
+                  .title('Transformation Stories')
+                  .items([
+                    S.listItem()
+                      .icon(BookIcon)
+                      .title('Landing Page')
+                      .child(
+                        S.document()
+                          .schemaType('transformationStoriesLanding')
+                          .documentId('transformationStoriesLanding'),
+                      ),
+                    S.divider(),
+                    S.listItem()
+                      .icon(BookIcon)
+                      .title('Transformation stories')
+                      .child(
+                        S.documentTypeList('transformationStories').title('Transformation story'),
+                      ),
+                  ]),
+              ),
+
+            S.listItem()
+              .icon(BookIcon)
+              .title('Community stories')
+              .child(
+                S.list()
+                  .title('Community Stories')
+                  .items([
+                    S.listItem()
+                      .icon(BookIcon)
+                      .title('Landing Page')
+                      .child(
+                        S.document()
+                          .schemaType('communityStoriesLanding')
+                          .documentId('communityStoriesLanding'),
+                      ),
+                    S.divider(),
+                    S.listItem()
+                      .icon(BookIcon)
+                      .title('Community stories')
+                      .child(S.documentTypeList('communityStories').title('Community story')),
+                  ]),
+              ),
 
             // S.listItem()
             //   .title('Shopify Products')

@@ -7,6 +7,19 @@ export const sectionText = defineType({
   type: 'object',
   fields: [
     {
+      name: 'roundedSection',
+      title: 'Rounded section',
+      type: 'boolean',
+      initialValue: false,
+      description:
+        'Adds rounded corners to the section, keep unticked if you want the section to be shown seamlessly inline.',
+    },
+    {
+      name: 'backgroundColor',
+      type: 'sectionBackgroundColor',
+      description: 'Only useful when rounded section is ticked',
+    },
+    {
       name: 'fontFamily',
       title: 'Font family',
       defaultValue: 'default',
@@ -20,6 +33,12 @@ export const sectionText = defineType({
         layout: 'radio',
       },
       validation: (rule) => rule.required(),
+    },
+    {
+      name: 'title',
+      title: 'Main Title',
+      type: 'title',
+      description: 'Displayed above the content, can be left empty if not needed',
     },
     {
       name: 'content',

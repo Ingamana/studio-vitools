@@ -63,6 +63,9 @@ import {sectionJournalListing} from './sections/general/journalListing'
 
 import {communityStoriesTypes} from './communityStoriesTypes'
 import {transformationStoriesTypes} from './transformationStoriesTypes'
+import {communityStoriesLandingTypes} from './communityStoriesLandingTypes'
+import {transformationStoriesLandingTypes} from './transformationStoriesLandingTypes'
+import {journalLandingTypes} from './journalLandingTypes'
 
 export const schemaTypes = [
   // Globals
@@ -134,4 +137,8 @@ export const schemaTypes = [
   shopTypes,
   communityStoriesTypes,
   transformationStoriesTypes,
+
+  journalLandingTypes,
+  communityStoriesLandingTypes,
+  transformationStoriesLandingTypes,
 ]

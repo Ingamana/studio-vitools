@@ -18,6 +18,15 @@ export const sectionCommunityStoriesListing = defineType({
       type: 'number',
     },
     {
+      name: 'forbidLoadMoreDisplay',
+      title: 'Forbid Load More button to be displayed in any case',
+      description:
+        'Useful when you want to use automatic curation but have a limited amount of articles.',
+      defaultValue: false,
+      initialValue: false,
+      type: 'boolean',
+    },
+    {
       name: 'curation',
       title: 'Curation',
       defaultValue: 'manual',
@@ -61,9 +70,15 @@ export const sectionCommunityStoriesListing = defineType({
     select: {
       stories: 'stories',
       variant: 'variant',
+      curation: 'curation',
     },
-    prepare({stories, variant}) {
-      const title = `${stories?.length || 0} story(ies) with ${variant} variant`
+    prepare({stories, variant, curation}) {
+      let title = `${stories?.length || 0} story(ies) with ${variant} variant`
+
+      if (curation === 'automatic') {
+        title = `Automatically curated community stories ${variant ? `with ${variant} variant` : ''}`
+      }
+
       return {
         title: title,
         subtitle: 'Section — Community Stories Listing',

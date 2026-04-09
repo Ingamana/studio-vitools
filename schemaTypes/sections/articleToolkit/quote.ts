@@ -29,10 +29,19 @@ export const sectionQuote = defineType({
         list: [
           {title: 'Default', value: '8col'},
           {title: 'Large', value: '10col'},
+          {title: 'Default (rounded)', value: 'rounded8col'},
+          {title: 'Large (rounded)', value: 'rounded10col'},
         ],
         layout: 'radio',
       },
+      description:
+        '(rounded): adds rounded corners to the section, keep unticked if you want the section to be shown seamlessly inline.',
       validation: (rule) => rule.required(),
+    },
+    {
+      name: 'backgroundColor',
+      type: 'sectionBackgroundColor',
+      description: 'Only useful when rounded section is ticked',
     },
     {
       name: 'quote',

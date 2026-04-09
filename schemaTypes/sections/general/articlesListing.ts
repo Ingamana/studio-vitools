@@ -23,11 +23,20 @@ export const sectionArticlesListing = defineType({
     },
     {
       name: 'loadMoreAmount',
-      title: 'Load More after how many articles?',
+      title: 'Article amount before Load More button appears',
       description: 'Set to 0 to disable load more button',
       defaultValue: 4,
       initialValue: 4,
       type: 'number',
+    },
+    {
+      name: 'forbidLoadMoreDisplay',
+      title: 'Forbid Load More button to be displayed in any case',
+      description:
+        'Useful when you want to use automatic curation but have a limited amount of articles.',
+      defaultValue: false,
+      initialValue: false,
+      type: 'boolean',
     },
     {
       name: 'curation',
@@ -73,11 +82,17 @@ export const sectionArticlesListing = defineType({
     select: {
       articles: 'articles',
       variant: 'variant',
+      curation: 'curation',
     },
-    prepare({articles, variant}) {
-      const title = `${articles?.length || 0} article(s) with ${variant} variant`
+    prepare({articles, variant, curation}) {
+      let title = `${articles?.length || 0} article(s) with ${variant} variant`
+
+      if (curation === 'automatic') {
+        title = 'Automatically curated articles with ' + variant + ' variant'
+      }
+
       return {
-        title: title,
+        title: 'foo',
         subtitle: 'Section — Articles Listing',
       }
     },

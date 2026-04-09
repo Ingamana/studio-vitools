@@ -9,7 +9,19 @@ type ProductDoc = {
 }
 
 export const PreviewAction: DocumentActionComponent = (props) => {
-  const allowedTypes = ['general', 'pages', 'articles', 'product', 'shop', 'home', 'communityStories', 'transformationStories'] // Only show for these schemas
+  const allowedTypes = [
+    'general',
+    'pages',
+    'articles',
+    'product',
+    'shop',
+    'home',
+    'communityStories',
+    'transformationStories',
+    'journalLanding',
+    'communityStoriesLanding',
+    'transformationStoriesLanding',
+  ] // Only show for these schemas
 
   if (!allowedTypes.includes(props.type)) {
     return null // 👈 hides the button for other schemas
@@ -21,6 +33,9 @@ export const PreviewAction: DocumentActionComponent = (props) => {
   const specialSlugMap: Record<string, string> = {
     general: 'general',
     home: 'home',
+    communityStoriesLanding: 'community-stories',
+    transformationStoriesLanding: 'transformation-stories',
+    journalLanding: 'journal',
   }
   const specialSlug = specialSlugMap[props.type]
 

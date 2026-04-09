@@ -61,9 +61,15 @@ export const sectionJournalListing = defineType({
     select: {
       articles: 'articles',
       variant: 'variant',
+      curation: 'curation',
     },
-    prepare({articles, variant}) {
-      const title = `${articles?.length || 0} article(s) with ${variant} variant`
+    prepare({articles, variant, curation}) {
+      let title = `${articles?.length || 0} article(s) with ${variant} variant`
+
+      if (curation === 'automatic') {
+        title = `Automatically curated articles ${variant ? `with ${variant} variant` : ''}`
+      }
+
       return {
         title: title,
         subtitle: 'Section — Journal Listing',
